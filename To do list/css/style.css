@@ -2,21 +2,21 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background-color: #19034d; 
+    background-color: #f6f3fdf5; 
 }
 
 .container {
     max-width: 400px;
     margin: 50px auto;
-    background-color: #fff; 
+    background-color: #6c4985ce; 
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(12, 12, 12, 0.781);
 }
 
 .todo-heading {
     text-align: center;
-    color: #333; 
+    color: #f1eeee; 
 }
 
 .input-container {
@@ -45,13 +45,13 @@ button:hover {
 }
 
 ul {
-    list-style-type: none;
+    list-style-type: rgb(241, 145, 209);
     padding: 0;
 }
 
 li {
     padding: 10px 0;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #e279ad;
   position: relative; 
 }
 
@@ -73,4 +73,5 @@ li {
     text-decoration: line-through;
     opacity: 0.5;
 }
+
 
