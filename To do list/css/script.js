@@ -1,39 +1,24 @@
-const inputBox = document.getElementById("input-box");
-const listContainer = document.getElementById("List-container");
 function addTask() {
-    if (inputBox.value === '') {
-        alert("You must write something!");
+    const inputBox = document.getElementById('input-box');
+    const taskList = document.getElementById('task-list');
+
+    if (inputBox.value.trim() !== '') {
+        const taskText = inputBox.value.trim();
+
+        const li = document.createElement('li');
+        li.innerHTML = `
+            <span>${taskText}</span>
+            <button class="delete-btn" onclick="deleteTask(this)">Delete</button>
+        `;
+
+        taskList.appendChild(li);
+        inputBox.value = ''; 
     } else {
-        let li = document.createElement("li");
-        li.innerHTML = inputBox.value;
-        listContainer.appendChild(li);
-        let span = document.createElement("span");
-        span.innerHTML = "\u00d7"; 
-        li.appendChild(span);
-    }
-    inputBox.value = "";
-    saveData();
-}
-
-listContainer.addEventListener("click", function(e) {
-    if (e.target.tagName === "LI") {
-        e.target.classList.toggle("checked");
-        saveData();
-    } else if (e.target.tagName === "SPAN") {
-        e.target.parentElement.remove();
-        saveData();
-    }
-});
-
-function saveData() {
-    localStorage.setItem("tasks", listContainer.innerHTML);
-}
-
-function loadTasks() {
-    let savedTasks = localStorage.getItem("tasks");
-    if (savedTasks) {
-        listContainer.innerHTML = savedTasks;
+        alert('Please enter a task!');
     }
 }
 
-window.onload = loadTasks;
+function deleteTask(btn) {
+    const li = btn.parentElement;
+    li.remove();
+}
