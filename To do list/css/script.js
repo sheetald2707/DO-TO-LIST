@@ -1,7 +1,5 @@
 const inputBox = document.getElementById("input-box");
-const listContainer = document.getElementById("List-container"); // Corrected the ID name to match the HTML
-
-// Function to add a new task
+const listContainer = document.getElementById("List-container");
 function addTask() {
     if (inputBox.value === '') {
         alert("You must write something!");
@@ -10,7 +8,7 @@ function addTask() {
         li.innerHTML = inputBox.value;
         listContainer.appendChild(li);
         let span = document.createElement("span");
-        span.innerHTML = "×"; // Use the correct character for the close symbol
+        span.innerHTML = "\u00d7"; 
         li.appendChild(span);
     }
     inputBox.value = "";
